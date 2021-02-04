@@ -11,6 +11,7 @@ import retrofit2.Response;
 public class MvpModel {
 
     private APIInterface apiInterface;
+    public MvpInterface mvpInterface;
 
 
 
@@ -27,7 +28,7 @@ public class MvpModel {
         call.enqueue(new Callback<ApiModel>() {
 
             @Override
-            public void onResponse(Call<ApiModel> call, Response<ApiModel> response) {
+            public void onResponse(Call<ApiModel> call, Response<MvpModel> response) {
                if(response.isSuccessful())
                callBack.onSuccess(response.body());
 
